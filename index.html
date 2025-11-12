@@ -7,35 +7,53 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: #121212;
+            background: radial-gradient(circle, #ff4500, #ff8c00);
             color: #ffffff;
             margin: 0;
             padding: 0;
+            animation: backgroundAnimation 10s infinite linear;
+        }
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         header {
-            background: #2c2c2c;
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
             text-align: center;
+            border-bottom: 10px solid #ff6347;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5em;
-            color: #ff4500;
+            font-size: 4em;
+            color: #ffffff;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+            animation: textAnimation 5s infinite alternate;
+        }
+        @keyframes textAnimation {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
         nav {
             display: flex;
             justify-content: center;
-            background: #3a3a3a;
-            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 25px 0;
         }
         nav a {
             color: #ffffff;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
+            margin: 0 30px;
+            font-size: 1.8em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #ff6347;
+            transform: scale(1.2);
         }
         .container {
-            padding: 20px;
+            padding: 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -45,31 +63,45 @@
             justify-content: space-around;
         }
         .game-card {
-            background: #4a4a4a;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
+            background: rgba(0, 0, 0, 0.6);
+            margin: 40px;
+            padding: 40px;
+            border-radius: 25px;
+            width: 380px;
             text-align: center;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .game-card:hover {
+            transform: scale(1.1);
+            background: rgba(0, 0, 0, 0.8);
         }
         .game-card img {
             max-width: 100%;
-            border-radius: 10px;
+            border-radius: 20px;
+            animation: imageAnimation 8s infinite alternate;
+        }
+        @keyframes imageAnimation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(10deg); }
         }
         .game-card h2 {
-            font-size: 1.5em;
-            margin: 10px 0;
+            font-size: 2.5em;
+            margin: 25px 0;
+            color: #ff6347;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .game-card p {
-            font-size: 1em;
+            font-size: 1.5em;
         }
         footer {
-            background: #2c2c2c;
+            background: rgba(0, 0, 0, 0.7);
             text-align: center;
-            padding: 10px 0;
+            padding: 25px 0;
             position: fixed;
             width: 100%;
             bottom: 0;
+            border-top: 10px solid #ff6347;
         }
         footer p {
             margin: 0;
